@@ -1,8 +1,9 @@
+from typing import List, Dict
 from base_scraper import BaseScraper
 
 
 class NYTScraper(BaseScraper):
-    def __init__(self, config):
+    def __init__(self, config: dict):
         super().__init__(config)
         self.fetch_page()
         if self.soup:
@@ -12,7 +13,7 @@ class NYTScraper(BaseScraper):
         else:
             self.stories = []
 
-    def get_article_list(self, n_articles: int = 30) -> list[dict[str, str]]:
+    def get_article_list(self, n_articles: int = 30) -> List[Dict[str, str]]:
         if not self.soup:  # Check if soup is None (request failed)
             return []
         news_articles = []
