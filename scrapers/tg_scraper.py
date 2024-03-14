@@ -32,9 +32,6 @@ class TheGuardianScraper(BaseScraper):
             container = self.soup.find(
                 "div", id=f"{self.config['region_container']}{region}"
             )
-            # print(f"{self.config['region_container']}{region}")
-            # print("####################")
-            # print(container)
             if container:
                 stories = []
                 for tag in container.find_all("a")[:nr_articles]:
