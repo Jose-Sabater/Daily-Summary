@@ -1,15 +1,19 @@
 from typing import List, Dict
-from base_scraper import BaseScraper
+from scrapers.base_scraper import BaseScraper
+import logging
 
 
 class NYTScraper(BaseScraper):
     def __init__(self, config: dict):
         super().__init__(config)
+        logging.info("Initiating NYTScraper")
         self.fetch_page()
         if self.soup:
             self.stories = self.soup.find_all(
                 "section", class_=self.config["story_wrapper_class"]
             )
+            logging.info(f"Found {len(self.stories)} stories")
+
         else:
             self.stories = []
 
