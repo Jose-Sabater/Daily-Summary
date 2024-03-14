@@ -15,7 +15,8 @@ Build a news summarizer that will present highlights of the news of the selected
 https://huggingface.co/facebook/nllb-200-distilled-600M  
 https://pypi.org/project/translate/
 ## Summarization
-[summarization](./utils/summarization.py)
+[Script](./utils/summarization.py)  
+Using:
 https://huggingface.co/facebook/bart-large-cnn
 ## App
 Streamlit
