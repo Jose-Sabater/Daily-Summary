@@ -22,7 +22,7 @@ class Summarizer:
 
     def summarize(self, text: str):
         """Create a summary of the input text using BART"""
-        print_green(f"Summarizing ")
+        print_green(f"Summarizing: {text[:100]}...")
         inputs = self.tokenizer(
             [text], return_tensors="pt", max_length=1024, truncation=True
         )
